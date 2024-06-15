@@ -1,0 +1,2 @@
+# GolangPractise
+learn by examples
