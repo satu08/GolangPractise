@@ -207,3 +207,14 @@ go tool cover -html c.out  -- renders ui on localhost showing coverage
 GET    curl localhost:9091/path
 POST   curl localhost:9091/path  -d  'json data'
 PUT    curl -X PUT localhost:9091/path -d 'json data to update'
+
+
+func (p *ProductList) ToJson(w io.Writer) error {
+	e := json.NewEncoder(w)
+	return e.Encode(p)
+}
+
+func (p *Product) FromJson(r io.Reader) error {
+	d := json.NewDecoder(r)
+	return d.Decode(p)
+}
