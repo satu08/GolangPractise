@@ -1,15 +1,13 @@
 package main
 
-import "fmt"
-
-func main() {
-	arr := divisors(9)
-	fmt.Println(arr)
-	fmt.Println("printing each divisor")
-	for _, x := range arr {
-		fmt.Println(x)
-	}
-}
+// func main() {
+// 	arr := divisors(9)
+// 	fmt.Println(arr)
+// 	fmt.Println("printing each divisor")
+// 	for _, x := range arr {
+// 		fmt.Println(x)
+// 	}
+// }
 
 func divisors(x int) []int {
 	var divisors []int

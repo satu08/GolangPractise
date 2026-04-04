@@ -1,17 +1,15 @@
 package main
 
-import "fmt"
-
-func main() {
-	fmt.Println(foo())
-	fmt.Println(bar())
-	fmt.Println(variadicfunc(1, 2, 3, 4, 5, 6))
-	fmt.Println(funcwithslice([]int{1, 2, 3, 4, 5, 6}))
-	// defer functions are LIFO
-	defer fmt.Println("satya1")
-	defer fmt.Println("satya2")
-	defer fmt.Println("satya3")
-}
+//	func main() {
+//		fmt.Println(foo())
+//		fmt.Println(bar())
+//		fmt.Println(variadicfunc(1, 2, 3, 4, 5, 6))
+//		fmt.Println(funcwithslice([]int{1, 2, 3, 4, 5, 6}))
+//		// defer functions are LIFO
+//		defer fmt.Println("satya1")
+//		defer fmt.Println("satya2")
+//		defer fmt.Println("satya3")
+//	}
 func foo() int {
 	return 42
 }

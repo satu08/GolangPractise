@@ -1,11 +1,9 @@
 package main
 
-import "fmt"
+// func main() {
+// 	fmt.Println(factorial(5))
 
-func main() {
-	fmt.Println(factorial(5))
-
-}
+// }
 
 func factorial(num int) int {
 	if num == 0 || num == 1 {

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package stringstream;
+
+
+option go_package = "../grpcfile;stringstreampb";
+
+service StringStreamService {
+  rpc SendStrings(stream StringMessage) returns (StreamResponse);
+}
+
+message StringMessage {
+  string data = 1;
+}
+
+message StreamResponse {
+  string status = 1;
+}

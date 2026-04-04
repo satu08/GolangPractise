@@ -1,0 +1,406 @@
+{
+  "@context": [
+    "https://www.w3.org/2019/wot/td/v1",
+    {
+      "schema": "https://schema.org/"
+    }
+  ],
+  "@type": [
+    "tm:ThingDescription"
+  ],
+  "base": "modbus://192.168.210.63:502",
+  "id": "urn:8PU9000GOI0063",
+  "mlfb": "7KM4212-0BA00-2AA0",
+  "name": "8PU9000GOI0063",
+  "properties": {
+    "ActiveEnergyImportTariff-1": {
+      "description": "Active Energy Import Tariff 1 [Wh]",
+      "forms": [
+        {
+          "href": "/1?address=0110&quantity=2",
+          "modbus:entity": "HoldingRegister",
+          "modbus:pollingTime": "30s",
+          "modbus:type": "number",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ]
+        }
+      ],
+      "observable": true,
+      "readOnly": true,
+      "type": "number",
+      "unit": "Wh"
+    },
+    "CurrentL1": {
+      "description": "current in L1 [A]",
+      "forms": [
+        {
+          "href": "/1?address=0006&quantity=2",
+          "modbus:entity": "HoldingRegister",
+          "modbus:pollingTime": "10s",
+          "modbus:type": "float",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ]
+        }
+      ],
+      "observable": true,
+      "readOnly": true,
+      "type": "number",
+      "unit": "A"
+    },
+    "CurrentL2": {
+      "description": "current in L2 [A]",
+      "forms": [
+        {
+          "href": "/1?address=0008&quantity=2",
+          "modbus:entity": "HoldingRegister",
+          "modbus:pollingTime": "10s",
+          "modbus:type": "float",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ]
+        }
+      ],
+      "observable": true,
+      "readOnly": true,
+      "type": "number",
+      "unit": "A"
+    },
+    "CurrentL3": {
+      "description": "current in L3 [A]",
+      "forms": [
+        {
+          "href": "/1?address=0010&quantity=2",
+          "modbus:entity": "HoldingRegister",
+          "modbus:pollingTime": "10s",
+          "modbus:type": "float",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ]
+        }
+      ],
+      "observable": true,
+      "readOnly": true,
+      "type": "number",
+      "unit": "A"
+    },
+    "Frequency": {
+      "description": "Frequency",
+      "forms": [
+        {
+          "href": "/1?address=0070&quantity=2",
+          "modbus:entity": "HoldingRegister",
+          "modbus:pollingTime": "10s",
+          "modbus:type": "float",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ]
+        }
+      ],
+      "observable": true,
+      "readOnly": true,
+      "type": "number",
+      "unit": "Hz"
+    },
+    "PowerFactorL1": {
+      "description": "power factor in L1 [-]",
+      "forms": [
+        {
+          "href": "/1?address=0030&quantity=2",
+          "modbus:entity": "HoldingRegister",
+          "modbus:pollingTime": "10s",
+          "modbus:type": "float",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ]
+        }
+      ],
+      "observable": true,
+      "readOnly": true,
+      "type": "number",
+      "unit": "-"
+    },
+    "PowerFactorL2": {
+      "description": "power factor in L2 [-]",
+      "forms": [
+        {
+          "href": "/1?address=0032&quantity=2",
+          "modbus:entity": "HoldingRegister",
+          "modbus:pollingTime": "10s",
+          "modbus:type": "float",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ]
+        }
+      ],
+      "observable": true,
+      "readOnly": true,
+      "type": "number",
+      "unit": "-"
+    },
+    "PowerFactorL3": {
+      "description": "power factor in L3 [-]",
+      "forms": [
+        {
+          "href": "/1?address=0034&quantity=2",
+          "modbus:entity": "HoldingRegister",
+          "modbus:pollingTime": "10s",
+          "modbus:type": "float",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ]
+        }
+      ],
+      "observable": true,
+      "readOnly": true,
+      "type": "number",
+      "unit": "-"
+    },
+    "TotalActiveEnergy": {
+      "description": "total active energy [Wh]",
+      "forms": [
+        {
+          "href": "/1?address=0332&quantity=4",
+          "modbus:entity": "HoldingRegister",
+          "modbus:pollingTime": "30s",
+          "modbus:type": "float",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ]
+        }
+      ],
+      "observable": true,
+      "readOnly": true,
+      "type": "number",
+      "unit": "Wh"
+    },
+    "TotalActivePower": {
+      "description": "total active power [W]",
+      "forms": [
+        {
+          "href": "/1?address=0052&quantity=2",
+          "modbus:entity": "HoldingRegister",
+          "modbus:pollingTime": "10s",
+          "modbus:type": "float",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ]
+        }
+      ],
+      "observable": true,
+      "readOnly": true,
+      "type": "number",
+      "unit": "W"
+    },
+    "TotalApparentPower": {
+      "description": "total apparent power [VA]",
+      "forms": [
+        {
+          "href": "/1?address=0056&quantity=2",
+          "modbus:entity": "HoldingRegister",
+          "modbus:pollingTime": "10s",
+          "modbus:type": "float",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ]
+        }
+      ],
+      "observable": true,
+      "readOnly": true,
+      "type": "number",
+      "unit": "VA"
+    },
+    "TotalPowerFactor": {
+      "description": "total power factor [-]",
+      "forms": [
+        {
+          "href": "/1?address=0062&quantity=2",
+          "modbus:entity": "HoldingRegister",
+          "modbus:pollingTime": "10s",
+          "modbus:type": "float",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ]
+        }
+      ],
+      "observable": true,
+      "readOnly": true,
+      "type": "number",
+      "unit": "-"
+    },
+    "TotalReactivePower": {
+      "description": "total reactive power [var]",
+      "forms": [
+        {
+          "href": "/1?address=0060&quantity=2",
+          "modbus:entity": "HoldingRegister",
+          "modbus:pollingTime": "10s",
+          "modbus:type": "float",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ]
+        }
+      ],
+      "observable": true,
+      "readOnly": true,
+      "type": "number",
+      "unit": "var"
+    },
+    "VoltageL1-L2": {
+      "description": "voltage between L1 and L2 [V]",
+      "forms": [
+        {
+          "href": "/1?address=0200&quantity=2",
+          "modbus:entity": "HoldingRegister",
+          "modbus:pollingTime": "10s",
+          "modbus:type": "float",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ]
+        }
+      ],
+      "observable": true,
+      "readOnly": true,
+      "type": "number",
+      "unit": "V"
+    },
+    "VoltageL1-N": {
+      "description": "voltage between L1 and N [V]",
+      "forms": [
+        {
+          "href": "/1?address=0000&quantity=2",
+          "modbus:entity": "HoldingRegister",
+          "modbus:pollingTime": "10s",
+          "modbus:type": "float",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ]
+        }
+      ],
+      "observable": true,
+      "readOnly": true,
+      "type": "number",
+      "unit": "V"
+    },
+    "VoltageL2-L3": {
+      "description": "voltage between L2 and L3 [V]",
+      "forms": [
+        {
+          "href": "/1?address=0202&quantity=2",
+          "modbus:entity": "HoldingRegister",
+          "modbus:pollingTime": "10s",
+          "modbus:type": "float",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ]
+        }
+      ],
+      "observable": true,
+      "readOnly": true,
+      "type": "number",
+      "unit": "V"
+    },
+    "VoltageL2-N": {
+      "description": "voltage between L2 and N [V]",
+      "forms": [
+        {
+          "href": "/1?address=0002&quantity=2",
+          "modbus:entity": "HoldingRegister",
+          "modbus:pollingTime": "10s",
+          "modbus:type": "float",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ]
+        }
+      ],
+      "observable": true,
+      "readOnly": true,
+      "type": "number",
+      "unit": "V"
+    },
+    "VoltageL3-L1": {
+      "description": "voltage between L3 and L1 [V]",
+      "forms": [
+        {
+          "href": "/1?address=0204&quantity=2",
+          "modbus:entity": "HoldingRegister",
+          "modbus:pollingTime": "10s",
+          "modbus:type": "float",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ]
+        }
+      ],
+      "observable": true,
+      "readOnly": true,
+      "type": "number",
+      "unit": "V"
+    },
+    "VoltageL3-N": {
+      "description": "voltage between L3 and N [V]",
+      "forms": [
+        {
+          "href": "/1?address=0004&quantity=2",
+          "modbus:entity": "HoldingRegister",
+          "modbus:pollingTime": "10s",
+          "modbus:type": "float",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ]
+        }
+      ],
+      "observable": true,
+      "readOnly": true,
+      "type": "number",
+      "unit": "V"
+    }
+  },
+  "schema:author": {
+    "schema:name": "nexus-x"
+  },
+  "schema:manufacturer": {
+    "schema:name": "Siemens"
+  },
+  "schema:mpn": "8PU9000",
+  "sec:configuration": {
+    "buildingxDataPlane": {},
+    "mqttDataPlane": {
+      "aggregationMode": "None",
+      "brokers": [
+        "GOI_MDP_AWS_IoT_DEV",
+        "GOI_MDP_AWS_IoT_PROD"
+      ],
+      "qoS": 0,
+      "retainLastMessage": true,
+      "samplingInterval": "10s",
+      "topic": "gis-goi/{thingId}/{propertyName}/Clean Room Area EB Power 3PH DB 1"
+    }
+  },
+  "security": "nosec_sc",
+  "securityDefinitions": {
+    "nosec_sc": {
+      "scheme": "nosec"
+    }
+  },
+  "title": "8PU9000GOI0063 -Clean Room Area EB Power 3PH DB 1"
+}

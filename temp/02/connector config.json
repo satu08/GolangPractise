@@ -1,0 +1,165 @@
+{
+    "networks": null,
+    "devices": {
+        "1100_0": {
+            "name": "BACnet-Edge-Router-1100",
+            "max_apdu_len": 1476,
+            "seg_type": 2,
+            "rpm_supported": true,
+            "wpm_supported": true,
+            "native_address": {
+                "NetNumber": 0,
+                "AddrInt": 139637976840896,
+                "AddrStr": "127.0.0.1:47808",
+                "AddressLength": 6,
+                "Remote": false
+            },
+            "objects": {
+                "0_20": {
+                    "name": "Analog Input 20",
+                    "description": "Sample Analog input Object",
+                    "units": "qudt:MilliA",
+                    "commandable": false
+                },
+                "0_21": {
+                    "name": "Analog Input 21",
+                    "description": "Sample Analog input Object",
+                    "units": "qudt:MilliA",
+                    "commandable": false
+                },
+                "13_90": {
+                    "name": "Multistate Input 90",
+                    "description": "CrAzY mUlTiStAtE iNpUt",
+                    "units": "",
+                    "commandable": false
+                },
+                "13_91": {
+                    "name": "Multistate Input 91",
+                    "description": "CrAzY mUlTiStAtE iNpUt",
+                    "units": "",
+                    "commandable": false
+                },
+                "14_100": {
+                    "name": "Multistate Output 100",
+                    "description": "CrAzY mUlTiStAtE oUtPuT",
+                    "units": "",
+                    "commandable": true
+                },
+                "14_101": {
+                    "name": "Multistate Output 101",
+                    "description": "CrAzY mUlTiStAtE oUtPuT",
+                    "units": "",
+                    "commandable": true
+                },
+                "17_130": {
+                    "name": "Schedule 130",
+                    "description": "Just a Schedule",
+                    "units": "",
+                    "commandable": false
+                },
+                "19_240": {
+                    "name": "multistate-value 240",
+                    "description": "multistate-value 240",
+                    "units": "",
+                    "commandable": true
+                },
+                "19_241": {
+                    "name": "multistate-value 241",
+                    "description": "multistate-value 241",
+                    "units": "",
+                    "commandable": true
+                },
+                "1_30": {
+                    "name": "Analog Output 30",
+                    "description": "Sample Analog output Object",
+                    "units": "qudt:KiloOHM",
+                    "commandable": true
+                },
+                "1_31": {
+                    "name": "Analog Output 31",
+                    "description": "Sample Analog output Object",
+                    "units": "qudt:KiloOHM",
+                    "commandable": true
+                },
+                "23_600": {
+                    "name": "Tenant 1",
+                    "description": "kWh accumulator",
+                    "units": "qudt:KiloW-HR",
+                    "commandable": false
+                },
+                "24_700": {
+                    "name": "Meter 5",
+                    "description": "liters convert",
+                    "units": "qudt:L-PER-HR",
+                    "commandable": false
+                },
+                "2_40": {
+                    "name": "Analog Value 40",
+                    "description": "Sample Analog value Object",
+                    "units": "qudt:KiloJ",
+                    "commandable": true
+                },
+                "2_41": {
+                    "name": "Analog Value 41",
+                    "description": "Sample Analog value Object",
+                    "units": "qudt:KiloJ",
+                    "commandable": true
+                },
+                "3_50": {
+                    "name": "Binary Input 50",
+                    "description": "Sample binary input Object",
+                    "units": "",
+                    "commandable": false
+                },
+                "3_51": {
+                    "name": "Binary Input 51",
+                    "description": "Sample binary input Object",
+                    "units": "",
+                    "commandable": false
+                },
+                "4_60": {
+                    "name": "Binary Output 60",
+                    "description": "Sample binary output Object",
+                    "units": "",
+                    "commandable": true
+                },
+                "4_61": {
+                    "name": "Binary Output 61",
+                    "description": "Sample binary output Object",
+                    "units": "",
+                    "commandable": true
+                },
+                "5_70": {
+                    "name": "Binary Value 70",
+                    "description": "Sample binary output Object",
+                    "units": "",
+                    "commandable": true
+                },
+                "5_71": {
+                    "name": "Binary Value 71",
+                    "description": "Sample binary output Object",
+                    "units": "",
+                    "commandable": true
+                },
+                "6_80": {
+                    "name": "Calendar 80",
+                    "description": "Sample Calendar Object",
+                    "units": "",
+                    "commandable": false
+                },
+                "7_200": {
+                    "name": "Command 200",
+                    "description": "Command 210",
+                    "units": "",
+                    "commandable": false
+                },
+                "7_210": {
+                    "name": "Command 210",
+                    "description": "Command 210",
+                    "units": "",
+                    "commandable": false
+                }
+            }
+        }
+    }
+}

@@ -1,22 +1,21 @@
 package main
 
 import (
-	"fmt"
 	"sync"
 )
 
-func main() {
-	eve := make(chan int)
-	odd := make(chan int)
-	fanin := make(chan int)
+// func main() {
+// 	eve := make(chan int)
+// 	odd := make(chan int)
+// 	fanin := make(chan int)
 
-	go sendchannel1(eve, odd)
-	go receivechannel1(eve, odd, fanin)
-	for v := range fanin {
-		fmt.Println(v)
-	}
-	fmt.Println("about to exit")
-}
+// 	go sendchannel1(eve, odd)
+// 	go receivechannel1(eve, odd, fanin)
+// 	for v := range fanin {
+// 		fmt.Println(v)
+// 	}
+// 	fmt.Println("about to exit")
+// }
 
 // send channel
 func sendchannel1(eve, odd chan<- int) {

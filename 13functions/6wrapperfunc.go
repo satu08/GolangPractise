@@ -2,23 +2,22 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"os"
 	"time"
 )
 
-func main() {
+// func main() {
 
-	bytes, err := readFile("../15writerInterfaces/output.txt")
-	if err != nil {
-		log.Fatalf("%s", err)
-	}
-	fmt.Println(bytes)
-	fmt.Println(string(bytes))
+// 	bytes, err := readFile("../15writerInterfaces/output.txt")
+// 	if err != nil {
+// 		log.Fatalf("%s", err)
+// 	}
+// 	fmt.Println(bytes)
+// 	fmt.Println(string(bytes))
 
-	timeFunc(doWork)
+// 	timeFunc(doWork)
 
-}
+// }
 
 func readFile(filename string) ([]byte, error) {
 	xb, err := os.ReadFile(filename)

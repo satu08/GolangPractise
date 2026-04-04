@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"math"
 )
 
@@ -14,15 +13,15 @@ func (n norgatemath) Error() string {
 	return fmt.Sprintf("a norgate math error: %v", n.err)
 }
 
-func main() {
-	fmt.Println("info for errors")
+// func main() {
+// 	fmt.Println("info for errors")
 
-	v, err := sqrt2(-10)
-	if err != nil {
-		log.Fatalln(err)
-	}
-	fmt.Println(v)
-}
+// 	v, err := sqrt2(-10)
+// 	if err != nil {
+// 		log.Fatalln(err)
+// 	}
+// 	fmt.Println(v)
+// }
 
 func sqrt2(f float64) (float64, error) {
 	if f < 0 {

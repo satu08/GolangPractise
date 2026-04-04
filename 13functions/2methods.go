@@ -27,16 +27,16 @@ func saySomething(human2 human) {
 	human2.speak()
 }
 
-func main() {
-	p1 := secretAgent{
-		person: person{
-			name: "satya",
-		},
-		ltk: true,
-	}
-	p2 := person{
-		name: "ravi",
-	}
-	saySomething(p1)
-	saySomething(p2)
-}
+// func main() {
+// 	p1 := secretAgent{
+// 		person: person{
+// 			name: "satya",
+// 		},
+// 		ltk: true,
+// 	}
+// 	p2 := person{
+// 		name: "ravi",
+// 	}
+// 	saySomething(p1)
+// 	saySomething(p2)
+// }

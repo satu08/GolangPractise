@@ -2,15 +2,15 @@ package main
 
 import "fmt"
 
-func main() {
-	eve := make(chan int)
-	odd := make(chan int)
-	quit := make(chan bool)
+// func main() {
+// 	eve := make(chan int)
+// 	odd := make(chan int)
+// 	quit := make(chan bool)
 
-	go sendchannel(eve, odd, quit)
-	receivechannel(eve, odd, quit)
-	fmt.Println("about to exit")
-}
+// 	go sendchannel(eve, odd, quit)
+// 	receivechannel(eve, odd, quit)
+// 	fmt.Println("about to exit")
+// }
 
 func sendchannel(eve, odd chan<- int, quit chan<- bool) {
 	for i := 0; i < 100; i++ {

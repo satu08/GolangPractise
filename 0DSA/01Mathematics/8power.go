@@ -1,11 +1,9 @@
 package main
 
-import "fmt"
-
-func main() {
-	power := pow(4, 2)
-	fmt.Println(power)
-}
+// func main() {
+// 	power := pow(4, 2)
+// 	fmt.Println(power)
+// }
 
 func pow(x int, y int) int {
 	var pow int = 1

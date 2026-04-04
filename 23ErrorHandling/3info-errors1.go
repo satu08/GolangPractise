@@ -2,19 +2,17 @@ package main
 
 import (
 	"errors"
-	"fmt"
-	"log"
 	"math"
 )
 
-func main() {
-	fmt.Println("info for errors")
+// func main() {
+// 	fmt.Println("info for errors")
 
-	_, err := sqrt(-10)
-	if err != nil {
-		log.Fatalln(err)
-	}
-}
+// 	_, err := sqrt(-10)
+// 	if err != nil {
+// 		log.Fatalln(err)
+// 	}
+// }
 
 func sqrt(f float64) (float64, error) {
 	if f < 0 {

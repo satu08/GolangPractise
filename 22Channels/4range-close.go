@@ -1,18 +1,16 @@
 package main
 
-import "fmt"
+// func main() {
 
-func main() {
+// 	ch := make(chan int)
 
-	ch := make(chan int)
+// 	go send(ch)
+// 	for i := range ch {
+// 		fmt.Println(i)
+// 	}
 
-	go send(ch)
-	for i := range ch {
-		fmt.Println(i)
-	}
-
-	fmt.Println("about to exit")
-}
+// 	fmt.Println("about to exit")
+// }
 
 func send(ch chan<- int) {
 	for i := 0; i < 50; i++ {

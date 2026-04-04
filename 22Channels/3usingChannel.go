@@ -2,16 +2,16 @@ package main
 
 import "fmt"
 
-func main() {
+// func main() {
 
-	ch := make(chan int)
+// 	ch := make(chan int)
 
-	go foo(ch)
+// 	go foo(ch)
 
-	bar(ch)
+// 	bar(ch)
 
-	fmt.Println("about to exit")
-}
+// 	fmt.Println("about to exit")
+// }
 
 func foo(ch chan<- int) {
 	ch <- 1

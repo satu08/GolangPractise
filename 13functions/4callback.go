@@ -1,21 +1,19 @@
 package main
 
-import "fmt"
+// func main() {
 
-func main() {
+// 	fmt.Println(doMath(12, 8, addition))
+// 	fmt.Println(doMath(12, 8, subtraction))
 
-	fmt.Println(doMath(12, 8, addition))
-	fmt.Println(doMath(12, 8, subtraction))
+// 	f := incrementor()
+// 	fmt.Println(f())
+// 	f = incrementor()
+// 	fmt.Println(f())
+// 	fmt.Println(f())
+// 	fmt.Println(f())
+// 	fmt.Println(f())
 
-	f := incrementor()
-	fmt.Println(f())
-	f = incrementor()
-	fmt.Println(f())
-	fmt.Println(f())
-	fmt.Println(f())
-	fmt.Println(f())
-
-}
+// }
 
 // callback
 func doMath(a int, b int, f func(int, int) int) int {

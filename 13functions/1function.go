@@ -2,20 +2,20 @@ package main
 
 import "fmt"
 
-func main() {
-	fmt.Println("introduction to functions")
-	defer foo() // executes at the last - waits for other functions to executes
-	bar("satyanarayan")
-	name := foofoo("satya")
-	fmt.Println(name)
-	name1, age1 := barbar("satya", 7)
-	fmt.Println(name1, age1)
-	// passing a values from a slice to a function
-	// unfurling a slice in a variadic function
-	xi := []int{1, 3, 4, 5, 6, 6, 76}
-	total := sum(xi...)
-	fmt.Println("total is", total)
-}
+// func main() {
+// 	fmt.Println("introduction to functions")
+// 	defer foo() // executes at the last - waits for other functions to executes
+// 	bar("satyanarayan")
+// 	name := foofoo("satya")
+// 	fmt.Println(name)
+// 	name1, age1 := barbar("satya", 7)
+// 	fmt.Println(name1, age1)
+// 	// passing a values from a slice to a function
+// 	// unfurling a slice in a variadic function
+// 	xi := []int{1, 3, 4, 5, 6, 6, 76}
+// 	total := sum(xi...)
+// 	fmt.Println("total is", total)
+// }
 
 // no params no return
 func foo() {
