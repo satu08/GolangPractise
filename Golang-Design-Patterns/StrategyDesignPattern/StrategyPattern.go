@@ -60,4 +60,37 @@ func main() {
 	mgConnection := MongoDbConnection{ConnectionString: "Mongo DB is connected"}
 	con3 := DBConnection{Db: mgConnection}
 	con3.DBConnect()
+
+	gzip := Gzip{}
+	service := Service{compressor: gzip}
+	service.Process("Hello World")
+
+	zip := Zip{}
+	service2 := Service{compressor: zip}
+	service2.Process("Hello World")
+
+}
+
+type Compressor interface {
+	Compress(data string) string
+}
+
+type Gzip struct{}
+
+func (g Gzip) Compress(data string) string {
+	return "gzip:" + data
+}
+
+type Zip struct{}
+
+func (z Zip) Compress(data string) string {
+	return "zip:" + data
+}
+
+type Service struct {
+	compressor Compressor
+}
+
+func (s Service) Process(data string) {
+	println(s.compressor.Compress(data))
 }

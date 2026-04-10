@@ -1,6 +1,6 @@
 package dependencymanagement2
 
-import dependencymanagement3 "hello/8dependencymanagement3"
+import dependencymanagement3 "hello/Golang-JJ-Anthony-course/8dependencymanagement3"
 
 func Bark() string {
 	return "woof!"

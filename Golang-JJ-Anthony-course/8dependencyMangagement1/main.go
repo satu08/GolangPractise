@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	dependencymanagement2 "hello/8dependencyManagement2"
+	dependencymanagement2 "hello/Golang-JJ-Anthony-course/8dependencyManagement2"
 )
 
 func main() {

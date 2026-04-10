@@ -1,11 +1,5 @@
 package main
 
-import (
-	"fmt"
-	"os/user"
-	"path/filepath"
-)
-
 // func main() {
 
 // 	decodestr, enc := ValidateAndFixUtf8([]byte("å701"))
@@ -80,10 +74,10 @@ import (
 // 	return strings.ReplaceAll(s, string('\uFFFD'), "?")
 // }
 
-func main() {
-	usr, _ := user.Current()
-	fmt.Println(usr.Name)
-	fmt.Println(usr.HomeDir)
-	fmt.Println(filepath.Join(usr.HomeDir, "config"))
+// func main() {
+// 	usr, _ := user.Current()
+// 	fmt.Println(usr.Name)
+// 	fmt.Println(usr.HomeDir)
+// 	fmt.Println(filepath.Join(usr.HomeDir, "config"))
 
-}
+// }
