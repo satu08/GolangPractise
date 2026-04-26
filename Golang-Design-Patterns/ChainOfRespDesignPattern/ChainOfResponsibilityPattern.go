@@ -1,6 +1,10 @@
 // Chain of Responsibility Design Pattern
 
 // WHAT
+// 👉 Chain of Responsibility = Pass a request through a chain of handlers until one handles it
+//Chain of Responsibility pattern allows a request to pass through a sequence of handlers,
+//  where each handler decides whether to process the request or pass it to the next.
+//  In Go, it is commonly implemented using interfaces and struct composition and is widely used in HTTP middleware pipelines.
 // WHY
 // HOW
 
@@ -71,4 +75,60 @@ func main() {
 	openFlap.setNext(pressStartButton)
 
 	openFlap.execute()
+
+	auth := &AuthHandler{}
+	log := &LogHandler{}
+
+	auth.SetNext(log)
+
+	auth.Handle("log")
+}
+
+//////////////////// HANDLER INTERFACE ////////////////////
+
+type Handler interface {
+	SetNext(Handler)
+	Handle(string)
+}
+
+//////////////////// BASE HANDLER ////////////////////
+
+type BaseHandler struct {
+	next Handler
+}
+
+func (b *BaseHandler) SetNext(n Handler) {
+	b.next = n
+}
+
+//////////////////// AUTH HANDLER ////////////////////
+
+type AuthHandler struct {
+	BaseHandler
+}
+
+func (a AuthHandler) Handle(req string) {
+	if req == "auth" {
+		fmt.Println("Auth handled ✅")
+		return
+	}
+	if a.next != nil {
+		a.next.Handle(req)
+	}
+}
+
+//////////////////// LOG HANDLER ////////////////////
+
+type LogHandler struct {
+	BaseHandler
+}
+
+func (l LogHandler) Handle(req string) {
+	if req == "log" {
+		fmt.Println("Log handled ✅")
+		return
+	}
+	if l.next != nil {
+		l.next.Handle(req)
+	}
 }

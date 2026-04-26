@@ -16,20 +16,6 @@ func lcm(a, b int) int {
 	return a * b / gcd(a, b)
 }
 
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
-}
-
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
-}
-
 func gcd(a, b int) int {
 	min := min(a, b)
 	for min > 0 {
@@ -52,6 +38,7 @@ func lcm2(a, b int) int {
 	}
 }
 
+// gcd(a,b)=gcd(a−b,b)
 func euclideanAlgo(a, b int) int {
 	for a != b {
 		if a > b {
@@ -68,4 +55,12 @@ func optimisedEuclideanAlgo(x, y int) int {
 		return x
 	}
 	return optimisedEuclideanAlgo(y, x%y)
+}
+
+// gcd(a,b)=gcd(b,amodb)
+func gcditerative(a, b int) int {
+	for b != 0 {
+		a, b = b, a%b
+	}
+	return a
 }

@@ -1,5 +1,12 @@
 // Observer Design Pattern in Go?
 // 1. What ?
+// 👉 Observer = One object (Subject) notifies multiple objects (Observers) when something changes
+
+// Observer design pattern is a behavioral design pattern that defines a one-to-many dependency between objects,
+//  so that when one object (the subject) changes state, all its dependents (observers) are notified and updated automatically.
+//  In Go, it is implemented using interfaces and struct composition and is commonly used in event handling systems and publish-subscribe architectures.
+// 2. Why ?
+// 3. How ? (Structs, Interfaces and Receiver Functions)
 // 2. Why ?
 // 3. How ?
 

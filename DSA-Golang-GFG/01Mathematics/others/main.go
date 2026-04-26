@@ -3,24 +3,27 @@ package main
 import (
 	"fmt"
 	"math"
+	"strconv"
 )
 
 func main() {
-	fmt.Println(evenOdd(5))
-	multiplicationTable(5)
-	fmt.Println(sumOfNaturalNumbers(10))
-	fmt.Println(sumofSquaresOfNaturals(8))
-	fmt.Println(swapTwoNumbers(4, 5))
-	fmt.Println(oppositeNumberOnCubicDice(5))
-	fmt.Println(nthTermInArithmeticProgression(1, 3, 10))
-	fmt.Println(sumOfDigits(75))
-	fmt.Println(reverseDigits(1212))
-	fmt.Println(checkIfPower(10, 1001))
-	fmt.Println(distanceOfTwoPoints(3, 4, 7, 7))
-	fmt.Println(validTriangle(7, 10, 5))
-	fmt.Println(pairCubeCount(28))
-	fmt.Println(perfectNumber(6))
-	fmt.Println(decimalToBinary(10))
+	// fmt.Println(evenOdd(5))
+	// multiplicationTable(5)
+	// fmt.Println(sumOfNaturalNumbers(10))
+	// fmt.Println(sumofSquaresOfNaturals(8))
+	// fmt.Println(swapTwoNumbers(4, 5))
+	// fmt.Println(oppositeNumberOnCubicDice(5))
+	// fmt.Println(nthTermInArithmeticProgression(1, 3, 10))
+	// fmt.Println(sumOfDigits(75))
+	// fmt.Println(reverseDigits(1212))
+	// fmt.Println(checkIfPower(10, 1001))
+	// fmt.Println(distanceOfTwoPoints(3, 4, 7, 7))
+	// fmt.Println(validTriangle(7, 10, 5))
+	// fmt.Println(pairCubeCount(28))
+	// fmt.Println(perfectNumber(6))
+	// fmt.Println(decimalToBinary(10))
+	//fmt.Println(getResolvedExpression("3+5*9/7-8"))
+	fmt.Println(addDigits(1234))
 }
 
 func evenOdd(n int) bool {
@@ -77,12 +80,31 @@ func sumOfDigits(n int) int {
 	return sum
 }
 
+func mirrorDistance(n int) int {
+	return int(math.Abs(float64(n) - float64(reverseDigits(n))))
+}
+
 func reverseDigits(n int) int {
 	reverse := 0
+	var isnegative bool
+	if n < 0 {
+		n = int(math.Abs(float64(n)))
+		isnegative = true
+	}
 	for n > 0 {
 		modulo := n % 10
 		reverse = reverse*10 + modulo
 		n /= 10
+	}
+	if isnegative {
+		if -reverse < math.MinInt32 {
+			return 0
+		}
+		return -reverse
+	}
+
+	if reverse > math.MaxInt32 {
+		return 0
 	}
 	return reverse
 }
@@ -140,4 +162,92 @@ func decimalToBinary(n int) string {
 		n = n / 2
 	}
 	return bits
+}
+
+func getResolvedExpression(str string) float64 {
+	token := tokenize(str)
+	for k := 0; k < len(token); k++ {
+		if token[k] == "*" || token[k] == "/" {
+			ch1, _ := strconv.ParseFloat(string(token[k-1]), 64)
+			ch2, _ := strconv.ParseFloat(string(token[k+1]), 64)
+			token = append(token[:k-1], append([]string{strconv.FormatFloat(applyOp(ch1, ch2, token[k]), 'f', -1, 64)}, token[k+2:]...)...)
+			k = 0
+		}
+	}
+	for k := 0; k < len(token); k++ {
+		if token[k] == "+" || token[k] == "-" {
+			ch1, _ := strconv.ParseFloat(string(token[k-1]), 64)
+			ch2, _ := strconv.ParseFloat(string(token[k+1]), 64)
+			token = append(token[:k-1], append([]string{strconv.FormatFloat(applyOp(ch1, ch2, token[k]), 'f', -1, 64)}, token[k+2:]...)...)
+			k = 0
+		}
+	}
+	ch, _ := strconv.ParseFloat(token[0], 64)
+	return ch
+}
+
+func applyOp(a, b float64, op string) float64 {
+	switch op {
+	case "*":
+		return float64(a * b)
+	case "+":
+		return float64(a + b)
+	case "-":
+		return float64(a - b)
+	case "/":
+		return float64(a) / float64(b)
+	}
+	return 0
+}
+
+func tokenize(s string) []string {
+	tokens := []string{}
+	num := ""
+
+	for i := 0; i < len(s); i++ {
+		if s[i] >= '0' && s[i] <= '9' {
+			num += string(s[i])
+		} else {
+			if num != "" {
+				tokens = append(tokens, num)
+				num = ""
+			}
+			tokens = append(tokens, string(s[i]))
+		}
+	}
+
+	if num != "" {
+		tokens = append(tokens, num)
+	}
+
+	return tokens
+}
+
+func isPowerOfTwo(n int) bool {
+	if n <= 0 {
+		return false
+	}
+	return (n & (n - 1)) == 0
+}
+
+func isPowerOfTwo2(n int) bool {
+	if n <= 0 {
+		return false
+	}
+
+	for n > 1 {
+		if n%2 != 0 {
+			return false
+		}
+		n = n / 2
+	}
+
+	return true
+}
+
+func addDigits(num int) int {
+	for num >= 10 {
+		num = sumOfDigits(num)
+	}
+	return num
 }

@@ -7,6 +7,7 @@ func main() {
 	fmt.Println(factorial)
 	fmt.Println(trailingZeroesInFactorialNaiveSolution(20))
 	fmt.Println(TrailingZeroesEfficient(100))
+	fmt.Println(trailingZeroes(5))
 }
 
 func factorial(n int) int {
@@ -46,4 +47,15 @@ func TrailingZeroesEfficient(x int) int {
 		zeroes = zeroes + x/i
 	}
 	return zeroes
+}
+
+func trailingZeroes(n int) int {
+	count := 0
+
+	for n > 0 {
+		n = n / 5
+		count += n
+	}
+
+	return count
 }

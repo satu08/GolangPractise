@@ -1,6 +1,15 @@
 // State Design Pattern
 
 // WHAT
+// 👉 State Design Pattern = Allow an object to change its behavior when its internal state changes
+//State design pattern allows an object to alter its behavior when its internal state changes, appearing as if it has changed its class.
+//  In Go, it is implemented using interfaces and struct composition and is commonly used in scenarios like state machines and workflow management.
+
+//State pattern allows an object to change its behavior when its internal state changes by delegating behavior to state objects.
+//  It replaces complex conditional logic with polymorphism.
+//  In Go, it is implemented using interfaces and struct composition and is commonly used in state machines and workflows.
+// WHY
+// HOW
 // WHY
 // HOW
 

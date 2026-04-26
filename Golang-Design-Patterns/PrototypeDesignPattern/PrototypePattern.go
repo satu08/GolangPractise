@@ -1,5 +1,9 @@
 // Prototype Design Pattern in Go?
 // 1. What ?
+// Prototype design pattern is a creational design pattern that allows cloning of objects,
+//  even complex ones, without coupling to their specific classes.
+// It is used when the cost of creating a new object is expensive or complex,
+// and we want to create new objects by copying existing ones.
 // 2. Why ?
 // 3. How ? (Structs, Interfaces and Receiver Functions)
 
@@ -101,4 +105,39 @@ func main() {
 		fmt.Println("Cloned object Changed Properties:")
 		newCircle.PrintTypeProp()
 	}
+
+	original := Config{
+		Name: "base",
+		Data: []string{"a", "b"},
+	}
+
+	copy := original.Clone()
+	copy.Data[0] = "changed"
+
+	fmt.Println("Original:", original)
+	fmt.Println("Copy:", copy)
 }
+
+type Config struct {
+	Name string
+	Data []string
+}
+
+// Deep Copying of the Config struct using Clone method
+func (c Config) Clone() Config {
+	newData := make([]string, len(c.Data))
+	copy(newData, c.Data)
+
+	return Config{
+		Name: c.Name,
+		Data: newData,
+	}
+}
+
+// Shallow Copying of the Config struct using Clone method
+// func (c Config) Clone() Config {
+// 	return Config{
+// 		Name: c.Name,
+// 		Data: c.Data,
+// 	}
+// }

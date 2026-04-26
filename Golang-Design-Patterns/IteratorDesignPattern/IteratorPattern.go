@@ -1,6 +1,13 @@
 // Iterator Design Pattern
 
 // WHAT
+// 👉 Iterator Design Pattern = Provide a way to access elements of a collection sequentially without exposing its underlying representation
+//Iterator design pattern provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
+//  In Go, it is implemented using interfaces and struct composition and is commonly used in collections and data structures.
+// Iterator = A way to traverse a collection without exposing its internal structure
+// range = built-in iterator
+// io.Reader = iterator-like
+// DB rows / streams = iterator pattern
 // WHY
 // HOW
 

@@ -1,6 +1,10 @@
 // Builder Design Pattern
 
 // What ?
+
+//Builder pattern is used to construct complex objects step-by-step,
+// especially when there are many optional parameters.
+//  In Go,it is implemented using method chaining and is commonly used for configuration objects and request builders.
 // Why ?
 // How ?
 // Pros and Cons ?
@@ -120,4 +124,51 @@ func main() {
 	fmt.Printf("Normal House Door is : %s\n", normalHouse.door)
 	fmt.Printf("Normal House Window is : %s\n", normalHouse.window)
 	fmt.Printf("Normal House Num Floor is : %d\n", normalHouse.floor)
+
+	user := NewUserBuilder().
+		SetName("Satya").
+		SetAge(25).
+		SetAddress("Pune").
+		Build()
+
+	fmt.Println(user)
 }
+
+//////////////////// PRODUCT ////////////////////
+
+type User struct {
+	Name    string
+	Age     int
+	Address string
+}
+
+//////////////////// BUILDER ////////////////////
+
+type UserBuilder struct {
+	user User
+}
+
+func NewUserBuilder() *UserBuilder {
+	return &UserBuilder{}
+}
+
+func (b *UserBuilder) SetName(name string) *UserBuilder {
+	b.user.Name = name
+	return b
+}
+
+func (b *UserBuilder) SetAge(age int) *UserBuilder {
+	b.user.Age = age
+	return b
+}
+
+func (b *UserBuilder) SetAddress(address string) *UserBuilder {
+	b.user.Address = address
+	return b
+}
+
+func (b *UserBuilder) Build() User {
+	return b.user
+}
+
+//////////////////// MAIN ////////////////////

@@ -1988,3 +1988,115 @@ InfluxDB + Cloud
 
 ---
 
+
+
+
+🧠 SECTION 1: Arrays & Hashing (1–15)
+Two Sum (all variations: indices, count, pairs)
+Longest Substring Without Repeating Characters
+Subarray Sum Equals K
+Maximum Subarray (Kadane)
+Product of Array Except Self
+Top K Frequent Elements
+Longest Consecutive Sequence
+Find Duplicate Number (Floyd cycle)
+Sliding Window Maximum
+Minimum Window Substring
+Continuous Subarray Sum (modulo trick)
+Majority Element II (> n/3)
+First Missing Positive
+Merge Intervals
+Insert Interval
+🔗 SECTION 2: Linked List (16–25)
+Reverse Linked List
+Reverse Nodes in K Group
+Merge Two Sorted Lists
+Merge K Sorted Lists (heap)
+Detect Cycle (Floyd’s algorithm)
+Remove Nth Node From End
+LRU Cache (custom + container/list)
+LFU Cache (O(1))
+Copy List with Random Pointer
+Flatten Multilevel Doubly Linked List
+🌳 SECTION 3: Trees & BST (26–40)
+Binary Tree Inorder/Preorder/Postorder
+Level Order Traversal
+Maximum Depth of Binary Tree
+Diameter of Binary Tree
+Lowest Common Ancestor (LCA)
+Validate BST
+Kth Smallest in BST
+Serialize/Deserialize Binary Tree
+Path Sum I, II, III
+Binary Tree Right Side View
+Vertical Order Traversal
+Construct Tree from Traversals
+Balanced Binary Tree
+Count Good Nodes
+Maximum Path Sum
+🌐 SECTION 4: Graphs (41–55)
+Number of Islands (DFS/BFS)
+Clone Graph
+Course Schedule (cycle detection)
+Topological Sort
+Word Ladder
+Dijkstra’s Algorithm
+Bellman-Ford
+Union Find (Disjoint Set)
+Kruskal’s MST
+Prim’s Algorithm
+Detect Cycle in Directed Graph
+Reconstruct Itinerary
+Network Delay Time
+Minimum Height Trees
+Accounts Merge
+🔥 SECTION 5: Heap / Priority Queue (56–65)
+Kth Largest Element
+Top K Frequent Words
+Merge K Sorted Arrays
+Find Median from Data Stream
+Task Scheduler
+Reorganize String
+Sliding Window Median
+Connect Ropes (min cost)
+K Closest Points to Origin
+Smallest Range Covering K Lists
+🧵 SECTION 6: Concurrency (Go-Specific) (66–75)
+Implement Worker Pool
+Rate Limiter (token bucket)
+Bounded queue with channels
+Fan-in / Fan-out pattern
+Parallel map-reduce
+Context cancellation propagation
+Avoid goroutine leaks
+Implement semaphore using channels
+Producer-consumer system
+Retry with exponential backoff
+⚙️ SECTION 7: Design-Oriented Coding (76–85)
+Design LRU Cache (thread-safe)
+Design LFU Cache
+Design Rate Limiter (distributed-ready)
+Design URL Shortener
+Design Pub-Sub system
+Design In-Memory Key-Value Store
+Design API Gateway middleware chain
+Design Logging System
+Design File Storage Service
+Design Metrics Collector
+📡 SECTION 8: Strings & Tries (86–92)
+Implement Trie
+Word Search II
+Longest Palindromic Substring
+Group Anagrams
+Encode and Decode Strings
+Rabin-Karp String Matching
+KMP Algorithm
+🧮 SECTION 9: DP (93–100)
+Climbing Stairs
+House Robber I, II
+Coin Change
+Longest Increasing Subsequence
+Longest Common Subsequence
+Edit Distance
+Partition Equal Subset Sum
+Knapsack (0/1 and unbounded)
