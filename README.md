@@ -1,211 +1,286 @@
+Here is your fully formatted README.md content. You can copy and paste this into your file:
 
-**why go?**
+---
 
-efficient compilation
+# Go Language Notes
 
-efficient execution
+## Why Go?
 
-ease of programming
+- Efficient compilation
+- Efficient execution
+- Ease of programming
 
-**ASCII, unicode and utf-8**
+---
 
-ascii - 2^8= 256 (1 byte)
+## ASCII, Unicode, and UTF-8
 
-unicode - 2^32=(4 byte)
+- **ASCII**: 2^8 = 256 (1 byte)
+- **Unicode**: 2^32 = 4 bytes
+- **UTF-8**: Up to 4 bytes, stores Unicode as binary
 
-utf-8 -  up to 4 bytes stores unicodes as binary
+**Short declaration operator:** `:=`
 
-short declaration operator===    :=
+---
 
-**default values of variables in golang**
+## Default Values of Variables in Go
 
-int =0
+| Type                                   | Default Value |
+|----------------------------------------|--------------|
+| int                                   | 0            |
+| float                                 | 0.0          |
+| string                                | ""           |
+| boolean                               | false        |
+| pointers, functions, interfaces,       |
+| slices, channels, maps                 | nil          |
 
-float=0.0
+- Go is a statically typed language.
+- `:=` (short declaration operator) can only be used inside functions, not outside.
+- Statically typed: if we declare a variable of one type, it can only hold values of that type.
 
-sting=””
+---
 
-boolean= false
+## Variable Types
 
-pointers,functions,interfaces,slices,channels,maps=nil
+- Boolean, Numeric, String, Array, Slices, Struct, Pointer, Function, Interfaces, Map, Channel
+- Aggregate types: bring many values together
+- Struct: includes values of different types
+- The act of constructing a struct (a composite type) is known as **composition**
 
-golang is statically typed language
+---
 
-(:=) short declaration operator can only be used inside the functions not outside of function  
-statically typed: if we declare a variable of one type then it can only hold values of that type
+## Function Declaration
 
-**variable types**
-
-- Boolean, Numeric, String, Array, Slices, Struct, pointer, Function, Interfaces, Map, Channel
-- aggregate types-brings many values together
-- struct-includes values of different type
-
-the act of constructing a Struct which is composite type is known as composition
-
-**function declaration**
-
-- func add(x, y int) int{
-
-return x+y
-
+```go
+func add(x, y int) int {
+    return x + y
 }
+```
 
-**terminal commands**  
-cd -change directory  
-cd .. - go to parent directory  
-mkdir - make directory  
-touch - create file  
-nano - write content of file  
-cat - write down the  content of file on terminal  
-clear-clear  
-chmod - changes permissions  
-rm file_name - remove particular file  
-rm -rf temp/ - remove folder and all content of that folder  
-pwd - print working directory  
-ls -la - list all files  
-chmod 777 text.txt (we are giving permissions to user, group and world for read(4) , write(2) and execute(1)
-vi filename- open file and after opening if you want to insert something press I and insert anything  
+---
 
-**SHA checksum**  
-consider we have a .msi file downloaded and when we run that file it contains some 0's and 1'sso when we apply
-sha checksum algorithm on those 0's and 1's we get the hashcode
-we can do this in terminal by command
-- shasum -a 256 filename
+## Terminal Commands
 
-**setup**  
--go mod init  
--go build- to build the package basically to create the executables  
-now suppose if you want to create build for other os  
-GOOS=linux go build -buildvcs=false  
-GOOS=windows go build  
-GOOS=darwin go build 
+```sh
+cd            # change directory
+cd ..         # go to parent directory
+mkdir         # make directory
+touch         # create file
+nano          # write content of file
+cat           # write down the content of file on terminal
+clear         # clear terminal
+chmod         # changes permissions
+rm file_name  # remove particular file
+rm -rf temp/  # remove folder and all content of that folder
+pwd           # print working directory
+ls -la        # list all files
+chmod 777 text.txt # give permissions to user, group, and world for read(4), write(2), execute(1)
+vi filename   # open file; after opening, press I to insert
+```
 
+---
 
-**dependency management**  
-spaghetti code - write code in one file and using go to statements  
-modular code - code distributed in many files using modules , packages  
-direct dependency- a dependency your code directly imports  
-indirect dependency-dependency used by your direct dependency  
-go mod-configures our workspace  
-like go mod init mymodule or go mod init github.com/xyzw/abc  
-go get-allows to get a third party packages in your code  
-if any variable or function is capital letter on first letter of word then it will be visible outside   
-that means it is exported otherwise not
+## SHA Checksum
 
+- Consider we have a `.msi` file downloaded. When we run that file, it contains some 0's and 1's. When we apply the SHA checksum algorithm on those 0's and 1's, we get the hashcode.
+- Command:
 
+```sh
+shasum -a 256 filename
+```
 
-**tags git commit and versions**
+---
 
-Vmajor.minor.patch
+## Setup
 
-major-major changes and not backward compatible  
-minor-minor changes and backward compatible  
-patch-bug fixes and backward compatible
+```sh
+go mod init
+go build # to build the package (create executables)
+# To create build for other OS:
+GOOS=linux go build -buildvcs=false
+GOOS=windows go build
+GOOS=darwin go build
+```
 
+---
 
-init() function-executes before main as well 
+## Dependency Management
 
-concurrency= way to writing code in concurrent design pattern  
-parallelism= executing that concurrent code on multiple cores or  
-ability of program to executes multiple tasks simultaneously on multiple cores
+- **Spaghetti code**: code in one file, using goto statements
+- **Modular code**: code distributed in many files using modules, packages
+- **Direct dependency**: a dependency your code directly imports
+- **Indirect dependency**: dependency used by your direct dependency
+- `go mod` configures our workspace
+- Example: `go mod init mymodule` or `go mod init github.com/xyzw/abc`
+- `go get` allows you to get third-party packages
+- If any variable or function starts with a capital letter, it is exported (visible outside); otherwise, it is not
 
+---
 
-checksum to a file
+## Tags, Git Commit, and Versions
+
+- Format: `Vmajor.minor.patch`
+    - **major**: major changes, not backward compatible
+    - **minor**: minor changes, backward compatible
+    - **patch**: bug fixes, backward compatible
+
+---
+
+## Special Functions and Concepts
+
+- `init()` function executes before `main()`
+- **Concurrency**: way of writing code in concurrent design pattern
+- **Parallelism**: executing concurrent code on multiple cores; ability to execute multiple tasks simultaneously on multiple cores
+
+---
+
+## Checksum to a File
+
+```sh
 shasum -a 256 ./filepath
+```
 
-**array**  
-    a numbered sequence of elements of the same type  
-    does not change in size  
-    used for go internals  
+---
 
-**slice**  
-    build on top of array  
-    holds value of same type  
-    changes in size  
-    has length and capacity  
+## Array
 
-**map**  
-    key value storage  
-    an unordered group of elements of one type called element type  
-indexed by set of unique keys of another type
+- A numbered sequence of elements of the same type
+- Does not change in size
+- Used for Go internals
 
-**struct**  
-    a data structure  
-    a composite type  
-    allow us to collect values of different types together  
+---
 
+## Slice
 
-x1: = make([]int,50) -- crate a slice and initialize it with 50–0 values len here is 50 
-x1: = make([]int,0,50) -- crate a slice, and it will not initialize it with 0 values so len here is 0
+- Built on top of array
+- Holds values of the same type
+- Changes in size
+- Has length and capacity
 
-**functions**  
-func (receiver) identifier(parameters) (returns) {code}  
-parameters-we define a function with parameter  
-arguments — we call a function and pass the arguments  
+---
 
-everything in go is pass by value
+## Map
 
-**interfaces and polymorphism**  
-interfaces in go defines a set of method signatures  
-polymorphism is ability of value of a certain type to also be of another type  
-in go values can be of more than one type
+- Key-value storage
+- An unordered group of elements of one type (element type)
+- Indexed by a set of unique keys of another type
 
-anonymous functions  
-self executing functions
-defer functions are LIFO
+---
 
-go doc 
+## Struct
+
+- A data structure
+- A composite type
+- Allows us to collect values of different types together
+
+---
+
+## Slice Creation Examples
+
+```go
+x1 := make([]int, 50)    // create a slice and initialize it with 50 zeros; len is 50
+x1 := make([]int, 0, 50) // create a slice, len is 0, cap is 50
+```
+
+---
+
+## Functions
+
+```go
+func (receiver) identifier(parameters) (returns) {
+    // code
+}
+```
+- Parameters: we define a function with parameters
+- Arguments: we call a function and pass the arguments
+- Everything in Go is pass by value
+
+---
+
+## Interfaces and Polymorphism
+
+- Interfaces in Go define a set of method signatures
+- Polymorphism: ability of a value of a certain type to also be of another type
+- In Go, values can be of more than one type
+- Anonymous functions
+- Self-executing functions
+- `defer` functions are LIFO
+
+---
+
+## Go Documentation
+
+```sh
+go doc
 go doc -cmd -u
+```
 
-wrapper function wraps or modifies another function behavior while
-callback function passed as an argument to be executed at a specific point or event
+---
 
+## Wrapper and Callback Functions
 
-**pointers**
-pointer refer to a variable that holds memory address  
-value semantics-values are going to be on the stack  
-pointer semantic — values are going to be on the heap  
-all the methods of value semantics can be used by pointer semantics as well  
-and all the methods of pointer semantics can be used by value semantics  
+- Wrapper function: wraps or modifies another function's behavior
+- Callback function: passed as an argument to be executed at a specific point or event
 
-if you have value of a pointer, you can use pointer receiver or value receiver to implement interfaces  
-if you have value of just a value not pointer, you can use only value receivers to implement interfaces
+---
 
+## Pointers
 
-**json**  
-Encode- writer  
-decode- reader  
+- Pointer refers to a variable that holds a memory address
+- **Value semantics**: values are on the stack
+- **Pointer semantics**: values are on the heap
+- All methods of value semantics can be used by pointer semantics as well, and vice versa
+- If you have a value of a pointer, you can use pointer receiver or value receiver to implement interfaces
+- If you have a value (not pointer), you can use only value receivers to implement interfaces
 
-**concurrency**  
-main function is first go routine  
+---
 
-**Fan-in and Fan-out**  
-fan-in == taking values from many channels and putting those values onto one channel  
-fan-out == taking some work and putting the chunks of work onto many goroutines
+## JSON
 
+- Encode: writer
+- Decode: reader
 
-**Error**   
-in go is just an interface  
-any other type that has this method Error() is also a type Error in Go  
+---
 
-**Testing**  
-is in the file that ends with "_test.go"  
-put the file in the same package as he one being tested  
-be in func with a signature "Func TestXxx(*testing.T)"  
-run with - go test  
-gofmt- formats the code  
-golint - give sugggestion about the code  
-go vet  
-go test -bench . -- benchmark all the test benchmarks  
+## Concurrency
 
-go test -cover = shows how  much coverage of code in testing  
-go test -coverprofile c.out 
-go tool cover -html c.out  -- renders ui on localhost showing coverage   
+- `main` function is the first goroutine
 
+---
 
-**MicroServices**  
+## Fan-in and Fan-out
+
+- **Fan-in**: taking values from many channels and putting those values onto one channel
+- **Fan-out**: taking some work and putting the chunks of work onto many goroutines
+
+---
+
+## Error
+
+- In Go, `error` is just an interface
+- Any other type that has the method `Error()` is also a type `Error` in Go
+
+---
+
+## Testing
+
+- Test files end with `_test.go`
+- Put the file in the same package as the one being tested
+- Function signature: `func TestXxx(*testing.T)`
+- Run with: `go test`
+- `gofmt`: formats the code
+- `golint`: gives suggestions about the code
+- `go vet`: static analysis
+- `go test -bench .`: benchmark all the test benchmarks
+- `go test -cover`: shows how much code is covered by tests
+- `go test -coverprofile c.out`
+- `go tool cover -html c.out`: renders UI on localhost showing coverage
+
+---
+
+## Microservices (Curl Examples)
+
+```sh
 GET    curl localhost:9091/path
 POST   curl localhost:9091/path  -d  'json data'
 PUT    curl -X PUT localhost:9091/path -d 'json data to update'
-
-
+```
